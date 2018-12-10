@@ -19,8 +19,11 @@ function createWindow() {
 
   mainWindow.webContents.on('did-navigate', (e, u) => {
     if (u === url) {
-      mainWindow.webContents.openDevTools();
+      setTimeout(()=>{
+ mainWindow.webContents.openDevTools();
       mainWindow.webContents.executeJavaScript(fs.readFileSync(path.resolve(__dirname, './src/renderer.js')).toString());
+}, 1000);
+     
     }
   });
 
