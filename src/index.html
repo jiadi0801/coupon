@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  <body>
+    <div>
+      <div class="ld-modal" style="display:none;">
+          <div class="ld-panel">
+            <span>抢券时间：</span>
+            <div>年<input type="text" id="ld-year"></div>
+            <div>月<input type="text" id="ld-month"></div>
+            <div>日<input type="text" id="ld-date"></div>
+            <div>时<input type="text" id="ld-hour"></div>
+            <div>分<input type="text" id="ld-min"></div>
+            <div>秒<input type="text" id="ld-sec"></div>
+            <div class="ld-btn-group">
+                <button id="ld-sure">确认</button>
+                <button id="ld-cancel">取消</button>
+            </div>
+          </div>
+      </div>
+    </div>
+    <script>
+      require('./renderer');
+    </script>
+  </body>
+</html>

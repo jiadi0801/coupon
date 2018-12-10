@@ -1,0 +1,16 @@
+{
+  "name": "coupon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "packageWin": "electron-packager . 'ldspirit' --platform=win32 --arch=x64 --icon=ldspirit.ico --out=./dist --app-version=0.0.1 --ignore=\"(dist|docs|.gitignore|LICENSE|README.md|webpack.config.js|node_modules)\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^3.0.10",
+    "electron-packager": "^13.0.0"
+  }
+}

@@ -1,0 +1,50 @@
+.ld-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .3);
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+}
+.ld-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
+  width: 200px;
+  height: 200px;
+}
+.ld-panel input {
+  display: inline-block;
+  outline: none;
+  width: 100px;
+  height: 15px;
+  background: #eee;
+}
+.ld-btn-group {
+  margin-top: 4px;
+}
+
+.ld-setted::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background: red;
+}
+#ld-setting {
+  position: fixed;
+  z-index: 9990;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 20px;
+  user-select: none;
+}
