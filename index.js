@@ -7,8 +7,8 @@ let mainWindow;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 414,
-    height: 736
+    width: 600,
+    height: 500
   });
   // let url = 'https://pro.m.jd.com/mall/active/UGA92oonG88bp5DQYYq1PJLKbmC/index.html'
   let url = clipboard.readText();
@@ -19,6 +19,7 @@ function createWindow() {
 
   mainWindow.webContents.on('did-navigate', (e, u) => {
     if (u === url) {
+      mainWindow.webContents.openDevTools();
       mainWindow.webContents.executeJavaScript(fs.readFileSync(path.resolve(__dirname, './src/renderer.js')).toString());
     }
   });
