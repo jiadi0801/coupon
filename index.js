@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const electron = require('electron');
 const {BrowserWindow, app, clipboard} = electron;
 
@@ -18,8 +19,7 @@ function createWindow() {
 
   mainWindow.webContents.on('did-navigate', (e, u) => {
     if (u === url) {
-      mainWindow.webContents.insertCSS(fs.readFileSync('./src/index.css').toString());
-      mainWindow.webContents.executeJavaScript(fs.readFileSync('./src/renderer.js').toString());
+      mainWindow.webContents.executeJavaScript(fs.readFileSync(path.resolve(__dirname, './src/renderer.js')).toString());
     }
   });
 
