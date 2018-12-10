@@ -86,6 +86,8 @@ function genClickTask(prevCoupon) {
   tag.style.left = prevCoupon.clientX + 'px';
   tag.style.top = prevCoupon.clientY + 'px';
   document.body.appendChild(tag);
+  console.log(tag.style.left);
+  console.log(tag.style.top);
 
   // prevCoupon.target.addEventListener('click', () => {
   //   console.log('time to excute');
@@ -135,15 +137,30 @@ function inject() {
     return false;
   });
 
+  window.addEventListener('mousemove', (e) => {
+    if (modal.style.display === 'none') {
+      prevCoupon.clientX = e.clientX;
+      prevCoupon.clientY = e.clientY;
+    }
+  });
+
   window.addEventListener('mousedown', (e) => {
     if (3 === e.which) {
       if (modal.style.display === 'none') {
-        let target = document.elementFromPoint(e.clientX, e.clientY);
-        prevCoupon = {
-          target: target,
-          clientX: e.clientX,
-          clientY: e.clientY
-        }
+        let target = document.elementFromPoint(prevCoupon.clientX, prevCoupon.clientY);
+        prevCoupon.target = target;
+        modal.style.display = 'flex';
+      } else {
+        modal.style.display = 'none';
+      }
+    }
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (81 === e.which) {
+      if (modal.style.display === 'none') {
+        let target = document.elementFromPoint(prevCoupon.clientX, prevCoupon.clientY);
+        prevCoupon.target = target;
         modal.style.display = 'flex';
       } else {
         modal.style.display = 'none';
