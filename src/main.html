@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <link rel="stylesheet" href="./main.css">
+  </head>
+  <body>
+    <div>
+      <div class="ld-link"><span>链接：</span><input id="url" type="text"><button id="go">走起</button></div>
+    </div>
+    <script>
+      const ipc = require('electron').ipcRenderer;
+      document.querySelector('#go').addEventListener('click', () => {
+        let url = document.querySelector('#url').value;
+        console.log(url);
+        console.log(window.onmsg);
+        ipc.send(window.onmsg, url);
+      });
+    </script>
+  </body>
+</html>

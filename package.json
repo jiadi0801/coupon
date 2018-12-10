@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "start": "electron .",
-    "packageWin": "electron-packager . ldspirit --platform=win32 --arch=x64 --icon=ldspirit.ico --out=./dist --ignore=\"(dist|docs|.gitignore|LICENSE|README.md|webpack.config.js|node_modules)\"",
-    "packageMac": "electron-packager . dxl --platform=darwin --arch=x64 --out=./dist --ignore=\"(dist|docs|.gitignore|LICENSE|README.md|webpack.config.js|node_modules)\""
+    "packageWin": "electron-packager . ldspirit --platform=win32 --arch=x64 --icon=ldspirit.ico --out=./dist --ignore=\"(dist|docs|.gitignore|LICENSE|README.md|webpack.config.js|node_modules|server)\"",
+    "packageMac": "electron-packager . ldspirit --platform=darwin --arch=x64 --out=./dist --ignore=\"(dist|docs|.gitignore|LICENSE|README.md|webpack.config.js|node_modules|server)\""
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "electron": "^3.0.10",
     "electron-packager": "^13.0.0"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
   }
 }

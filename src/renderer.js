@@ -81,10 +81,10 @@ function genClickTask(prevCoupon) {
   tag.style.width = '40px';
   tag.style.background = '#fff';
   tag.style.color = '#000';
-  tag.style.position ='fixed';
+  tag.style.position ='absolute';
   tag.style.zIndex = 999;
-  tag.style.left = prevCoupon.clientX + 'px';
-  tag.style.top = prevCoupon.clientY + 'px';
+  tag.style.left = prevCoupon.pageX + 'px';
+  tag.style.top = prevCoupon.pageY + 'px';
   document.body.appendChild(tag);
   console.log(tag.style.left);
   console.log(tag.style.top);
@@ -141,6 +141,8 @@ function inject() {
     if (modal.style.display === 'none') {
       prevCoupon.clientX = e.clientX;
       prevCoupon.clientY = e.clientY;
+      prevCoupon.pageY = e.pageY;
+      prevCoupon.pageX = e.pageX;
     }
   });
 
